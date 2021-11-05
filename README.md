@@ -7,8 +7,11 @@
 </h3>
 
 <p align="center">
-[![npm version](https://badge.fury.io/js/npm.svg)](https://badge.fury.io/js/npm)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  <img alt="npm version" src="https://badge.fury.io/js/npm.svg">
+  
+  <a href="./LICENSE">
+    <img alt="License" src="https://img.shields.io/badge/License-MIT-yellow.svg">
+  </a>
 </p>
 
 <h4 align="center">
@@ -51,7 +54,7 @@ Projeto desenvolvido para a empresa **Aprova Total** como desafio técnico em pr
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) e [MongoDB](https://www.mongodb.com/)
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) e [MongoDB](https://www.mongodb.com/).
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
 #### 🎲 Rodando o Servidor
@@ -75,7 +78,7 @@ $ npm run dev
 ```
 
 <p align="center">
-[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=aprovatotal&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fjoaopauloduprat%2Faprovatotal%2Fmain%2Faprovatotal.json)
+  <a href="https://insomnia.rest/run/?label=aprovatotal&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fjoaopauloduprat%2Faprovatotal%2Fmain%2Faprovatotal.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
 </p>
 
 ---
@@ -109,6 +112,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## 📝 Licença
 
-Este projeto esta sobe a licença [MIT](./LICENSE).
+Este projeto esta sob a licença [MIT](./LICENSE).
 
 Feito com ❤️ por João Paulo Duprat Pohlmann 👋🏽 [Entre em contato!](https://www.linkedin.com/in/joaopauloduprat/)
