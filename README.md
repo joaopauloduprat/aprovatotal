@@ -27,8 +27,10 @@
 - [Como executar o projeto](#-como-executar-o-projeto)
   - [Pré-requisitos](#pré-requisitos)
   - [Rodando o Servidor](#user-content--rodando-o-servidor)
+  - [Executando testes](#user-content--executando-testes)
+  - [Rotas da API](#user-content--rotas-da-api)
+  - [Documentação](#user-content--documentação)
 - [Tecnologias](#-tecnologias)
-  - [Server](#user-content-server--nodejs----typescript)
 - [Autor](#-autor)
 - [Licença](#user-content--licença)
 <!--te-->
@@ -77,9 +79,20 @@ $ npm run dev
 
 ```
 
+#### :test_tube: Executando testes
+
+```bash
+
+# Execute os testes
+$ npm run test
+
+```
+
 <p align="center">
   <a href="https://insomnia.rest/run/?label=aprovatotal&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fjoaopauloduprat%2Faprovatotal%2Fmain%2Faprovatotal.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
 </p>
+
+### :page_facing_up: Documentação da API
 
 ---
 
