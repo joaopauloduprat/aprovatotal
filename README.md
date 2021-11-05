@@ -26,9 +26,9 @@
 - [Funcionalidades](#-funcionalidades)
 - [Como executar o projeto](#-como-executar-o-projeto)
   - [Pré-requisitos](#pré-requisitos)
-  - [Rodando o Servidor](#user-content--rodando-o-servidor)
-  - [Executando testes](#user-content--executando-testes)
-  - [Documentação](#user-content--documentação)
+  - [Rodando o Servidor](#-rodando-o-servidor)
+  - [Executando testes](#-executando-testes)
+- [Documentação](#-documentação)
 - [Tecnologias](#-tecnologias)
 - [Autor](#-autor)
 - [Licença](#user-content--licença)
@@ -91,7 +91,9 @@ $ npm run test
   <a href="https://insomnia.rest/run/?label=aprovatotal&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fjoaopauloduprat%2Faprovatotal%2Fmain%2Faprovatotal.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
 </p>
 
-### :page_facing_up: Documentação da API
+---
+
+## :page_facing_up: Documentação da API
 
 ---
 
