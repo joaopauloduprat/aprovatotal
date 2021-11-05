@@ -28,7 +28,6 @@
   - [Pré-requisitos](#pré-requisitos)
   - [Rodando o Servidor](#user-content--rodando-o-servidor)
   - [Executando testes](#user-content--executando-testes)
-  - [Rotas da API](#user-content--rotas-da-api)
   - [Documentação](#user-content--documentação)
 - [Tecnologias](#-tecnologias)
 - [Autor](#-autor)
