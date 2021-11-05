@@ -1,12 +1,13 @@
-const express = require("express");
+const { port } = require("../config/environment");
 
+const express = require("express");
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-require("./controllers/alunoController")(app);
-require("./controllers/cursoController")(app);
-require("./controllers/matriculaController")(app);
+require("./routes/cursos")(app);
+require("./routes/alunos")(app);
+require("./routes/matriculas")(app);
 
-app.listen(3000, () => console.log("Server running on port 3000"));
+app.listen(port || 3000, () => console.log("Server running!"));

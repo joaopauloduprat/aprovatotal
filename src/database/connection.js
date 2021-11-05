@@ -1,9 +1,5 @@
 const mongoose = require("mongoose");
-
-const db_user = process.env.DB_USER;
-const db_password = process.env.DB_PASSWORD;
-
-console.log(db_user);
+const { db_user, db_password } = require("../config/environment");
 
 mongoose
   .connect(

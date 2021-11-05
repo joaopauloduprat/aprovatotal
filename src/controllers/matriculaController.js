@@ -1,10 +1,6 @@
-const express = require("express");
-
 const Aluno = require("../models/aluno");
 
-const router = express.Router();
-
-router.post("/", async (req, res) => {
+exports.create = async (req, res) => {
   try {
     const { aluno_id, curso_id } = req.body;
 
@@ -24,9 +20,9 @@ router.post("/", async (req, res) => {
       .status(400)
       .send({ error: "Nao foi possivel criar a matricula" });
   }
-});
+};
 
-router.get("/", async (req, res) => {
+exports.list = async (req, res) => {
   try {
     const aluno = await Aluno.find(
       { matriculas: { $ne: null } },
@@ -40,6 +36,4 @@ router.get("/", async (req, res) => {
       .status(400)
       .send({ error: "Nao foi possivel listar as matriculas" });
   }
-});
-
-module.exports = (app) => app.use("/matriculas", router);
+};

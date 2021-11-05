@@ -1,10 +1,6 @@
-const express = require("express");
-
 const Curso = require("../models/curso");
 
-const router = express.Router();
-
-router.post("/", async (req, res) => {
+exports.create = async (req, res) => {
   try {
     const { nome, _id } = await Curso.create(req.body);
 
@@ -13,9 +9,9 @@ router.post("/", async (req, res) => {
     console.log(err);
     return res.status(400).send({ error: "Nao foi possivel criar o curso" });
   }
-});
+};
 
-router.patch("/:id", async (req, res) => {
+exports.update = async (req, res) => {
   try {
     const curso_id = req.params.id;
 
@@ -31,9 +27,9 @@ router.patch("/:id", async (req, res) => {
       .status(400)
       .send({ error: "Nao foi possivel atualizar o curso" });
   }
-});
+};
 
-router.get("/", async (req, res) => {
+exports.list = async (req, res) => {
   let filter = req.query;
 
   if (!filter.nome) filter = {};
@@ -46,6 +42,4 @@ router.get("/", async (req, res) => {
     console.log(err);
     return res.status(400).send({ error: "Nao foi possivel listar os cursos" });
   }
-});
-
-module.exports = (app) => app.use("/cursos", router);
+};

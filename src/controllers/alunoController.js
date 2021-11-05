@@ -1,10 +1,6 @@
-const express = require("express");
-
 const Aluno = require("../models/aluno");
 
-const router = express.Router();
-
-router.post("/", async (req, res) => {
+exports.create = async (req, res) => {
   try {
     delete req.body.matriculas;
 
@@ -15,9 +11,9 @@ router.post("/", async (req, res) => {
     console.log(err);
     return res.status(400).send({ error: "Nao foi possivel criar o aluno" });
   }
-});
+};
 
-router.patch("/:id", async (req, res) => {
+exports.update = async (req, res) => {
   try {
     const aluno_id = req.params.id;
     const aluno = await Aluno.findByIdAndUpdate(aluno_id, req.body, {
@@ -32,9 +28,9 @@ router.patch("/:id", async (req, res) => {
       .status(400)
       .send({ error: "Nao foi possivel atualizar o aluno" });
   }
-});
+};
 
-router.get("/", async (req, res) => {
+exports.list = async (req, res) => {
   let filter = req.query;
 
   if (!filter.nome) filter = {};
@@ -47,6 +43,4 @@ router.get("/", async (req, res) => {
     console.log(err);
     return res.status(400).send({ error: "Nao foi possivel listar os alunos" });
   }
-});
-
-module.exports = (app) => app.use("/alunos", router);
+};
