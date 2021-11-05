@@ -1,5 +1,3 @@
-const { port } = require("../config/environment");
-
 const express = require("express");
 const app = express();
 
@@ -10,4 +8,4 @@ require("./routes/cursos")(app);
 require("./routes/alunos")(app);
 require("./routes/matriculas")(app);
 
-app.listen(port || 3000, () => console.log("Server running!"));
+app.listen(process.env.PORT || 3000, () => console.log("Server running!"));
