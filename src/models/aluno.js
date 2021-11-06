@@ -24,6 +24,7 @@ const AlunoSchema = new Schema({
     type: String,
     required: true,
     lowercase: true,
+    unique: true,
   },
   matriculas: {
     type: [MatriculaSchema],
