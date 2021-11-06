@@ -1,0 +1,446 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Aprova Total API",
+    "description": "Gerencie seus alunos, cursos e matrículas!",
+    "contact": {
+      "email": "duprat.dev@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://aprovatotal.herokuapp.com",
+      "description": "API de produção"
+    }
+  ],
+  "paths": {
+    "/alunos": {
+      "post": {
+        "summary": "Cadastro de aluno",
+        "description": "Essa rota é responsável pelo cadastro de aluno",
+        "tags": ["Alunos"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Aluno"
+              },
+              "examples": {
+                "aluno": {
+                  "value": {
+                    "name": "Joao",
+                    "email": "duprat.dev@gmail.com"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string"
+                    },
+                    "nome": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Nao foi possivel criar o aluno"
+          }
+        }
+      },
+      "get": {
+        "summary": "Listagem de alunos",
+        "description": "Essa rota é responsável pela listagem de alunos",
+        "tags": ["Alunos"],
+        "parameters": [
+          {
+            "name": "nome",
+            "in": "query",
+            "description": "Nome do aluno para busca",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "_id": {
+                        "type": "string"
+                      },
+                      "nome": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Nao foi possivel listar os alunos"
+          }
+        }
+      }
+    },
+    "/alunos/{id}": {
+      "patch": {
+        "summary": "Atualização de aluno pelo id",
+        "description": "Essa rota é responsável pelo atualização de um aluno pelo id",
+        "tags": ["Alunos"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do aluno para atualizar",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Aluno"
+              },
+              "examples": {
+                "aluno": {
+                  "value": {
+                    "name": "Joao",
+                    "email": "duprat.dev@gmail.com"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string"
+                    },
+                    "nome": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Nao foi possivel atualizar o aluno"
+          }
+        }
+      }
+    },
+    "/cursos": {
+      "post": {
+        "summary": "Cadastro de curso",
+        "description": "Essa rota é responsável pelo cadastro de curso",
+        "tags": ["Cursos"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Curso"
+              },
+              "examples": {
+                "curso": {
+                  "value": {
+                    "name": "Biologia"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Curso"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Nao foi possivel criar o curso"
+          }
+        }
+      },
+      "get": {
+        "summary": "Listagem de cursos",
+        "description": "Essa rota é responsável pela listagem de cursos",
+        "tags": ["Cursos"],
+        "parameters": [
+          {
+            "name": "nome",
+            "in": "query",
+            "description": "Nome do curso para busca",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Curso"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Nao foi possivel listar os cursos"
+          }
+        }
+      }
+    },
+    "/cursos/{id}": {
+      "patch": {
+        "summary": "Atualização de curso pelo id",
+        "description": "Essa rota é responsável pelo atualização de um curso pelo id",
+        "tags": ["Cursos"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do curso para atualizar",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Curso"
+              },
+              "examples": {
+                "curso": {
+                  "value": {
+                    "name": "Biologia"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string"
+                    },
+                    "nome": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Nao foi possivel atualizar o curso"
+          }
+        }
+      }
+    },
+    "/matriculas": {
+      "post": {
+        "summary": "Cadastro de matricula",
+        "description": "Essa rota é responsável pelo cadastro de matricula",
+        "tags": ["Matriculas"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Matricula"
+              },
+              "examples": {
+                "matricula": {
+                  "value": {
+                    "aluno_id": "6183da11c51324306026164d",
+                    "curso_id": "6184e1afd64eb29762f5f6f4"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string"
+                    },
+                    "nome": {
+                      "type": "string"
+                    },
+                    "matriculas": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "_id": {
+                            "type": "string"
+                          },
+                          "data_cadastro": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "curso": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Nao foi possivel criar a matricula"
+          }
+        }
+      },
+      "get": {
+        "summary": "Listagem de matriculas",
+        "description": "Essa rota é responsável pela listagem de matriculas",
+        "tags": ["Matriculas"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Aluno"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Nao foi possivel listar as matriculas"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Aluno": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "matriculas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Matricula"
+            }
+          },
+          "data_cadastro": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Curso": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "data_cadastro": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Matricula": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "data_cadastro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "curso": {
+            "type": "object",
+            "properties": {
+              "_id": {
+                "type": "string"
+              },
+              "nome": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
