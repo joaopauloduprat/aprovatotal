@@ -95,6 +95,8 @@ $ npm run test
 
 ## 📄 Documentação da API
 
+https://aprovatotal.herokuapp.com/api-docs/
+
 ---
 
 ## 🛠 Tecnologias
