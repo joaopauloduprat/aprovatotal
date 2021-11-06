@@ -78,7 +78,7 @@ $ npm run dev
 
 ```
 
-#### :test_tube: Executando testes
+#### 🧪 Executando testes
 
 ```bash
 
@@ -93,7 +93,7 @@ $ npm run test
 
 ---
 
-## :page_facing_up: Documentação da API
+## 📄 Documentação da API
 
 ---
 
