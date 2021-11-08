@@ -71,7 +71,8 @@ $ cd aprovatotal
 # Instale as dependências
 $ npm install
 
-# Renomeie o arquivo .env.example para .env e altere o valor das variáveis de banco de dados conforme o seu ambiente. Como este projeto não possui seeders ao rodar o projeto, será necessário criar as collections 'alunos' e 'cursos' no seu banco de dados MongoDB.
+# Renomeie o arquivo .env.example para .env e altere o valor da string de conexao conforme o seu ambiente.
+# Crie as collections 'alunos' e 'cursos' no seu banco de dados MongoDB.
 
 # Execute a aplicação em modo de desenvolvimento
 $ npm run dev
