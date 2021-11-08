@@ -40,6 +40,8 @@
 
 Projeto desenvolvido para a empresa **Aprova Total** como desafio técnico em processo de seleção.
 
+Uma versão online da API pode ser acessada em: http://aprovatotal.herokuapp.com/
+
 ---
 
 ## ⚙️ Funcionalidades
